@@ -1,0 +1,25 @@
+{
+  "elements":{
+    "signupPage":{
+     
+      "fullnameField": "#fullname",
+      "businessnameField":"#tradingName",
+      "businessemailField": "#email",
+      "phonenumberField": "#mobile",
+      "businessregnumField": "#businessRegNum",
+      "continueButton": "[type='submit']",
+      "instagramField": "#instagramHandle",
+      "twitterField": "#twitterHandle",
+      "howdidYouHearAoutUs": "[placeholder='Select']",
+      "passwordField": "[type='password']",
+      "SignupButton": "[type='submit']",
+      "continueSubmitButton" : "[type='submit']"
+
+    },
+    "homePage": {
+       "homepageSignupButton":"body > header > nav > div.Layout_btnSet__LMdbR > div:nth-child(2) > button"
+
+    }
+
+  } 
+}
