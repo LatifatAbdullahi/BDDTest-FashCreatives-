@@ -9,7 +9,7 @@ import {fakerEN_NG as faker } from "@faker-js/faker"
 
 
 
-before(()=>{
+beforeEach(()=>{
     const checker = new Date().getTime()
     const emailSuffix = checker.toString().substring(6,13)
     const emailPrefix = `test${emailSuffix}`
@@ -40,8 +40,8 @@ Cypress.Commands.add('typeInAnyValue', (field, text) =>{
    })
 
 Cypress.Commands.add('clickHowYouHeardAboutUsDropdown',  (text) => {
-     cy.get( signupPage.howdidYouHearAoutUs).click()
-     cy.get('#scrollableDiv').contains(text).click()
+     cy.get(signupPage.howdidYouHearAoutUs).click()
+    cy.get('#scrollableDiv').contains(text).click()
         
      })
 Cypress.Commands.add('readEmailFromFile',()=>{
@@ -90,45 +90,16 @@ Cypress.Commands.add('typeInUserDetails', ()=>{
       })
     })
 })
-
-Cypress.Commands.add('fillInBusinessEmail', (path, field)=>{
-    cy.readEmailFromFile(path).then((email)=>{
-        cy.get(signupPage.businessemailField).fill(email)
+Cypress.Commands.add('fillInBusinessEmail', ()=>{
+   cy.typeInAnyValue(signupPage.businessemailField, email.emailAddress)
     })
-})
 
-Cypress.Commands.add('InsertEmail', (field)=>{
+
+Cypress.Commands.add('InsertEmail', (email)=>{
     cy.fillInBusinessEmail('cypress\fixtures\creds.json', signupPage.businessemailField)
     
 })
 
-Cypress.Commands.add('InsertDetails', (detailType)=>{
-    switch (detailType){
-        case 'full name':
-            cy.fillInFullname()
-            break
-        case 'business name':
-            cy.fillInBusinessName()
-            break
-        case 'businesss email':
-             cy.fillInBusinessEmail('cypress\fixtures\creds.json', signupPage.businessemailField)
-            break
-        case 'phone number':
-            cy.fillInPhoneNumber()
-            break
-        case 'business reg number':
-            cy.fillInBusinessRegNum()
-            break
-            
-    }
-})
-
-//  Cypress.Commands.add('fillInFullname',()=>{
-//     cy.get('#root').shadow().find(()=>{
-//         cy.get(signupPage.fullnameField).fill(faker.person.buzzNoun)
-//     })
-    
-//  })
 
 Cypress.Commands.add('fillInBusinessName',()=>{
     cy.get(signupPage.businessnameField).fill(faker.company.buzzNoun)
@@ -138,7 +109,14 @@ Cypress.Commands.add('fillInPhoneNumber',()=>{
     cy.get(signupPage.phonenumberField).fill(faker.phone.number({style: 'international'}))
 })
 
-Cypress.Commands.add('fillInBusinessRegNum',()=>{
-    cy.get(signupPage.businessregnumField).fill(faker.phone.number({style: 'international'}))
+
+
+Cypress.Commands.add('fillInName',()=>{
+    cy.get('My Test Name').type('#fullname')
 })
 
+Cypress.Commands.add('fillInBusinessEmail1', ()=>{
+   cy.readEmailFromFile().then((email)=>{
+    cy.get(signupPage.businessemailField).fill(email.emailAddress)
+   })
+    })

@@ -25,7 +25,6 @@ module.exports = defineConfig({
         baseUrl: 'https://staging.fashcreatives.com/home',
         viewportHeight: 960,
         viewportWidth: 1530,
-       // includeShadowDom: true,
         defaultCommandTimeout: 13000,
         chromeWebSecurity: false,
         specPattern: '**/*.feature',

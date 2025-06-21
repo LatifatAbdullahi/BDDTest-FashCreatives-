@@ -10,7 +10,7 @@
       "continueButton": "[type='submit']",
       "instagramField": "#instagramHandle",
       "twitterField": "#twitterHandle",
-      "howdidYouHearAoutUs": "[placeholder='Select']",
+      "howdidYouHearAoutUs": "div[placeholder='Select']",
       "passwordField": "[type='password']",
       "SignupButton": "[type='submit']",
       "continueSubmitButton" : "[type='submit']"
