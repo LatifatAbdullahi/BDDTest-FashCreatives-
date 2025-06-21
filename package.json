@@ -20,11 +20,11 @@
     ],
     "json": {
       "enabled": true,
-      "output": "reports/json/results.json"
+      "output": "cypress/reports/json/reports.json"
     },
     "html": {
       "enabled": true,
-      "output": "reports/html/results.html"
+      "output": "cypress/reports/html/reports.html"
     }
   }
 }
