@@ -10,4 +10,5 @@ cypress/fixtures/creds.json
 # Cypress reports
 cypress/videos/
 cypress/screenshots/
-cypress.env.json
+cypress.env.json/
+/cypress/fixtures/creds.json

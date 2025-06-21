@@ -9,7 +9,7 @@ const {
 
 async function setupNodeEvents(on, config) {
   await addCucumberPreprocessorPlugin(on, config);
-
+  
   on(
     "file:preprocessor",
     createBundler({
@@ -18,7 +18,10 @@ async function setupNodeEvents(on, config) {
   );
 
   return config;
+  
 }
+
+
 
 module.exports = defineConfig({
     e2e: {
@@ -30,6 +33,8 @@ module.exports = defineConfig({
         specPattern: '**/*.feature',
         supportFile: 'cypress/support/e2e.js',
         setupNodeEvents,
-    }
+          
+        
+      }
 });
     

@@ -5,6 +5,7 @@ import 'cypress-mailosaur'
 import 'cypress-fill-command'
 import './custom-commands/common-actions'
 import './custom-commands/homepage'
+
             
 beforeEach(() =>{
     cy.on('uncaught:exception',()=>{
