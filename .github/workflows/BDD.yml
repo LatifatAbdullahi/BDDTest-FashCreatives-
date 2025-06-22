@@ -15,7 +15,9 @@ jobs:
 
         - name: Run Cypress
           uses: cypress-io/github-action@v6
-          
+          env:
+            CYPRESS_MAILOSAUR_API_KEY: ${{secrets.CYPRESS_MAILOSAUR_API_KEY}}
+
         - name: Upload Report
           uses: actions/upload-artifact@v4
           with:
